@@ -10,6 +10,8 @@ import AuthLayout from "layouts/AuthLayout";
 import Vehiculos from "pages/admin/Usuarios";
 import IndexUsuarios from "pages/usu.jsx";
 import EditarUsuario from "pages/usu.jsx/editar.jsx";
+import IndexProyectos from "pages/proyectos";
+
 
 import "styles/tabla.css";
 import "styles/globals.css"
@@ -30,14 +32,14 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route path={["/admin", "/usuarios","/usuarios/editar/:_id",]}
+          <Route path={["/admin", "/usuarios","/usuarios/editar/:_id","/proyectos"]}
           >
             <PrivateLayout>
               <Switch>
                 <Route path="/admin/usuarios"><Vehiculos /></Route>
                 <Route path="/usuarios/editar/:_id"><EditarUsuario /></Route>
                 <Route path="/usuarios"><IndexUsuarios /></Route>
-                
+                <Route path="/proyectos"><IndexProyectos /></Route>
                 <Route path="/admin"><Admin /></Route>
               </Switch>
             </PrivateLayout>
