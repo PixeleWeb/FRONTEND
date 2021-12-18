@@ -9,7 +9,7 @@ const PrivateLayout = ({children}) => {
        <div className='flex w-screen h-screen'>
       <Sidebar/>
       <main className='w-full  overflow-scroll items-center justify-center'>{children}</main>
-      <ToastContainer className='justify-center' />
+      <ToastContainer className='position="top-right' />
       
        </div>
   )

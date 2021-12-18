@@ -1,5 +1,5 @@
-import Login from "pages/Login";
-import Registro from "pages/Registro";
+import Login from "pages/auth/Login";
+
 import Admin from "pages/admin/Index";
 import Index from "pages/Index";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -11,10 +11,13 @@ import Vehiculos from "pages/admin/Usuarios";
 import IndexUsuarios from "pages/usu.jsx";
 import EditarUsuario from "pages/usu.jsx/editar.jsx";
 
+
 import "styles/tabla.css";
 import "styles/globals.css"
 //import Clientes from 'pages/admin/Clientes';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import CrearUsuario from "pages/auth/Registro.jsx";
+import IndexCrear from "pages/auth/Login.jsx";
 
 // const httpLink = createHttpLink ({
 //   uri='https://pixeles-web.herokuapp.com/graphql',
@@ -42,11 +45,12 @@ function App() {
               </Switch>
             </PrivateLayout>
           </Route>
-          <Route path={["/login", "/registro"]}>
+          <Route path={["/admin/auth", "/registro","/auth/Registro"]}>
             <AuthLayout>
               <Switch>
-                <Route path="/login"><Login /></Route>
-                <Route path="/registro"><Registro /></Route>
+              <Route path="/admin/auth"><Login /></Route>
+                <Route path="/auth/Registro"><CrearUsuario /></Route>
+                <Route path="/registro"><IndexCrear /></Route>
               </Switch>
             </AuthLayout>
           </Route>

@@ -1,13 +1,13 @@
 import { useQuery } from '@apollo/client';
-import { GET_USUARIOS } from 'graphql/usuarios/queries';
+import { GET_REGISTRO } from 'graphql/auth/queries';
 import React,{useEffect} from 'react'
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { Enum_Rol, Enum_EstadoUsuario} from 'utils/enum';
 
 
-const IndexUsuarios = () => {
-    const {data,error,loading}=useQuery(GET_USUARIOS);
+const IndexCrear = () => {
+    const {data,error,loading}=useQuery(GET_REGISTRO);
 
     useEffect(() => {
         console.log('data servidor',data);
@@ -15,7 +15,7 @@ const IndexUsuarios = () => {
 
     useEffect(()=>{
         if(error){
-            toast.error('Error consultando los usuarios')
+            toast.error('Error creando los usuarios')
         }
     },[error])
 
@@ -28,7 +28,7 @@ const IndexUsuarios = () => {
 
     return (
         <div className='flex flex-col items-center justify-center '>
-        <h2 className='text-2xl font-extrabold text-gray-800'>Lista de Usuarios</h2>
+        <h2 className='text-2xl font-extrabold text-gray-800'>Lista de Usuarios Creados</h2>
         
         <table className='tabla'>
           <thead>
@@ -39,7 +39,7 @@ const IndexUsuarios = () => {
               <th>Identificación</th>
               <th>Rol</th>
               <th>Estado</th>
-              <th>Editar</th>
+              <th>Crear</th>
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@ const IndexUsuarios = () => {
                     <td>{Enum_Rol[u.rol]}</td>
                     <td>{Enum_EstadoUsuario[u.estado]}</td>
                     <td>
-                      <Link to={`/usuarios/editar/${u._id}`}>
+                      <Link to={`/auth/Registro/${u._id}`}>
                         <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
                       </Link>
                       
@@ -68,4 +68,4 @@ const IndexUsuarios = () => {
     )
 }
 
-export default IndexUsuarios;
+export default IndexCrear;
