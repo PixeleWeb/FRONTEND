@@ -11,7 +11,8 @@ import Vehiculos from "pages/admin/Usuarios";
 import IndexUsuarios from "pages/usu.jsx";
 import EditarUsuario from "pages/usu.jsx/editar.jsx";
 import IndexProyectos from "pages/proyectos";
-
+import IndexInscripciones from "pages/inscripciones";
+import CrearInscripciones from "pages/inscripciones/crear";
 
 
 import "styles/tabla.css";
@@ -35,7 +36,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route path={["/admin", "/usuarios","/usuarios/editar/:_id","/proyectos"]}
+          <Route path={["/admin", "/usuarios","/usuarios/editar/:_id","/proyectos","/inscripciones"]}
           >
             <PrivateLayout>
               <Switch>
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/usuarios/editar/:_id"><EditarUsuario /></Route>
                 <Route path="/usuarios"><IndexUsuarios /></Route>
                 <Route path="/proyectos"><IndexProyectos /></Route>
+                <Route path="/inscripciones"><IndexInscripciones /></Route>
                 <Route path="/admin"><Admin /></Route>
               </Switch>
             </PrivateLayout>
@@ -52,6 +54,7 @@ function App() {
               <Switch>
               <Route path="/admin/auth"><Login /></Route>
                 <Route path="/auth/Registro"><CrearUsuario /></Route>
+                <Route path="/inscripciones/crear"><CrearInscripciones /></Route>
                 <Route path="/registro"><IndexCrear /></Route>
               </Switch>
             </AuthLayout>
