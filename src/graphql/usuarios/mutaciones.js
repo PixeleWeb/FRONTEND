@@ -29,6 +29,8 @@ mutation EditarUsuario(
   }
 }
 
+
+
 `;
 
 export {EDITAR_USUARIO};
