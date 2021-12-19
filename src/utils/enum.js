@@ -27,4 +27,11 @@ const Enum_TipoObjetivo = {
   ESPECIFICO: 'Específico',
 };
 
-export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto, Enum_TipoObjetivo,Enum_FaseProyecto };
+const Enum_EstadoInscripcion ={
+  INICIADO: 'iniciado',
+  DESARROLLO:'desarrollo',
+  TERMINADO:'terminado',
+  NULO:'nulo',
+};
+
+export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto,  Enum_EstadoInscripcion, Enum_TipoObjetivo,Enum_FaseProyecto };

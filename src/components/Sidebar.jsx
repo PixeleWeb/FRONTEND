@@ -15,15 +15,8 @@ const Sidebar = () => {
       <div className='my-8'>
         <Ruta icono='fas fa-users' ruta='/usuarios' nombre='Usuarios' />
         <Ruta icono='fas fa-plus-square' ruta='/auth/registro' nombre='Crear Usuario' />
-<<<<<<< HEAD
         <Ruta icono='fas fa-cogs' ruta='/proyectos' nombre='Proyectos' />
         <Ruta icono='fas fa-book-reader' ruta='/inscripciones' nombre='Inscripciones' />
-=======
-        <Ruta icono='fas fa-project-diagram' ruta='/proyectos' nombre='Proyectos' />
-        
-        <Ruta icono='fas fa-address-card' ruta='/inscripciones' nombre='Inscripciones' />
-        <Ruta icono='fas fa-plus-square' ruta='/inscripciones/crear' nombre='Crear Inscripcion' />
->>>>>>> 0e6339bea1f690c8107fa2500d9940cc35d8ecc6
         <Ruta icono='fas fa-cash-register' ruta='/admin/ventas' nombre='Avances' />
       {/*<Ruta icono='fas fa-users' ruta='/admin/usuarios' nombre='Usuarios' />*/}
       </div>
